@@ -9,7 +9,7 @@ while True:
     a = input(f'{cd} > ')
 
     if a == '.create(arg=console)':
-        print('Temporarily Unavailable')
+        os.startfile(f'{os.getcwd()}\Files\Consoles\defolt.py')
         print()
 
     elif '.create' in a:
