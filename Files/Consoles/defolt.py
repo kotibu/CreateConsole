@@ -1,5 +1,6 @@
 import tkinter as tk
 from tkinter import ttk, messagebox, filedialog
+import os
 
 def open_file():
     """Открывает файл."""
@@ -31,6 +32,13 @@ def change_theme(theme_name):
     ttk.Style().theme_use(theme_name)
     messagebox.showinfo("Смена темы", f"Тема изменена на {theme_name}.")
 
+def custom():
+    a = input(f'{os.getcwd} >')
+    if a == '.test':
+        print('Связь с окном есть')
+    else:
+        print(f'Команда {a} не является внутренней или внешней командой CreateConsole')
+
 
 # Создание основного окна
 root = tk.Tk()
@@ -55,7 +63,7 @@ edit_menu = tk.Menu(main_menu, tearoff=0)
 main_menu.add_cascade(label="Редактировать", menu=edit_menu)
 
 edit_menu.add_command(label="Проверить работу", command=lambda: print('Связь с окном есть.'))
-edit_menu.add_command(label="Вставить", command=lambda: messagebox.showinfo("Редактирование", "Вставить"))
+edit_menu.add_command(label="Кастом", command=custom)
 edit_menu.add_command(label="Вырезать", command=lambda: messagebox.showinfo("Редактирование", "Вырезать"))
 
 # ---- Меню "Вид" ----
